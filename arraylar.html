@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            height: auto;
+            width: 295px;
+            font-size: large;
+            
+        }
+        .keypad {
+             display: none;
+             position:fixed;
+             top: 0%;
+             background-color: green;
+             padding: 10px;
+             border: 1px solid #ccc;
+        }
+        .keypad button{
+            padding: 20px;
+            margin: 5px;
+            font-size: 20px;
+}
+        .borckutusu{
+            
+           
+            flex-direction: row;
+            margin: 20px;
+        }
+        body{
+            background-color: grey;
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            
+
+        }
+        .kutu{
+            border-color: grey;
+            border-style: solid;
+            height: auto;
+            width: auto;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+            
+           
+        }
+        ul{
+            
+            margin: 10px;
+            padding: 0px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        /*    //LI NIN SONUNA TL KOYABILMEK ICIN AMA SIMDI JS ILE YAPICAM
+        li::after{
+            content: " TL";
+        }
+        */
+        
+    </style>
+</head>
+<body>
+    
+    <div class="borckutusu">
+    <button type="button" onclick="tumBorcSil()">tumBorcSil</button>
+    <button type="button"  onclick="borcYaz()">borc yaz</button>
+    <button type="button" onclick="borcSil()">borc sil</button>
+    <button type="button" onclick="borcTopla()" >toplam borc goster</button>
+    
+    <input type="text" id="borcMiktari" placeholder="borc girebilmek icin dokunun lutfen">
+
+    
+    </div>
+    <div id="keypad" class="keypad">
+        <button onclick="insertValue(1)">1</button>
+        <button onclick="insertValue(2)">2</button>
+        <button onclick="insertValue(3)">3</button><br>
+        <button onclick="insertValue(4)">4</button>
+        <button onclick="insertValue(5)">5</button>
+        <button onclick="insertValue(6)">6</button><br>
+        <button onclick="insertValue(7)">7</button>
+        <button onclick="insertValue(8)">8</button>
+        <button onclick="insertValue(9)">9</button><br>
+        <button onclick="insertValue(0)">0</button>
+        <button onclick="clearTextbox()">Clear</button>
+    </div>
+    <p style="font-size: xx-large;" id="toplam"></p>
+    <div style="font-size: xx-large;" class="kutu">   
+        
+        <ul style="list-style-type:none;" id="borc_defteri" >BORCLAR</ul>
+     
+    </div>
+
+    
+    <script src="arraylar.js"></script>
+</body>
+</html>
