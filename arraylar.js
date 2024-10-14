@@ -44,8 +44,10 @@ function borcYaz() {
         var yeniListe = document.createElement("li");
         yeniListe.appendChild(metin);
         var liste = document.getElementById("borc_defteri");
-        liste.appendChild(yeniListe);
+        liste.prepend(yeniListe);
         document.getElementById("borcMiktari").value = "";
+        document.getElementById("keypadBorcMiktari").value = "";
+        borcTopla();
         
         i++;
 } 
@@ -55,8 +57,7 @@ function borcTopla(){
          toplam = toplam + Number(siteler[0][2][3][a]);
 
     }
-    document.getElementById("toplam").textContent ="toplam tutar "+toplam+" TL"
-    //console.log("toplam tutar = "+toplam);
+    document.getElementById("toplam").textContent ="toplam tutar "+toplam+" TL";
     toplam = 0;
 }
 
@@ -72,11 +73,14 @@ function borcSil() {
     var yeniListe = document.createElement("li");
     yeniListe.appendChild(metin);
     var liste = document.getElementById("borc_defteri");
-    liste.appendChild(yeniListe);
+    liste.prepend(yeniListe);
     document.getElementById("borcMiktari").value = "";
+    document.getElementById("keypadBorcMiktari").value = "";
+    borcTopla();
     i++;
 }
 }
+const keypadtextbox = document.getElementById('keypadBorcMiktari')
 const textbox = document.getElementById('borcMiktari');
     const keypad = document.getElementById('keypad');
 
@@ -88,11 +92,14 @@ const textbox = document.getElementById('borcMiktari');
     // degerlerin textboxa sokmak icin
     function insertValue(value) {
       textbox.value += value;
+      keypadtextbox.value += value;
     }
+
 
     // clear
     function clearTextbox() {
       textbox.value = '';
+      keypadtextbox.value = '';
     }
 
     // baska bir yere basinca keypadin kapanabilmesi icin 
@@ -112,8 +119,9 @@ function tumBorcSil() {
     var yeniListe = document.createElement("li");
     yeniListe.appendChild(metin);
     var liste = document.getElementById("borc_defteri");
-    liste.appendChild(yeniListe);
+    liste.prepend(yeniListe);
     document.getElementById("borcMiktari").value = "";
+    borcTopla();
     i++;
     tumBorc = 0;
 

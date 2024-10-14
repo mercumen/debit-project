@@ -14,8 +14,9 @@
         .keypad {
              display: none;
              position:fixed;
+
              top: 0%;
-             background-color: green;
+             background-color: aqua;
              padding: 10px;
              border: 1px solid #ccc;
         }
@@ -25,8 +26,9 @@
             font-size: 20px;
 }
         .borckutusu{
-            
-           
+
+            left: 0px;
+            position: relative;
             flex-direction: row;
             margin: 20px;
         }
@@ -34,15 +36,16 @@
             background-color: grey;
             display: flex;
             
-            justify-content: center;
-            align-items: center;
+            
+            
             height: 100vh;
-            flex-direction: column;
+            
             
 
         }
         .kutu{
-            border-color: grey;
+            
+            border-color: red ;
             border-style: solid;
             height: auto;
             width: auto;
@@ -72,12 +75,10 @@
 <body>
     
     <div class="borckutusu">
-    <button type="button" onclick="tumBorcSil()">tumBorcSil</button>
-    <button type="button"  onclick="borcYaz()">borc yaz</button>
-    <button type="button" onclick="borcSil()">borc sil</button>
-    <button type="button" onclick="borcTopla()" >toplam borc goster</button>
+    <button style="height: 150px; width: 150px; background-color: purple; font-size:x-large;"   type="button" onclick="tumBorcSil()">TUM BORCU SIL</button>
     
-    <input type="text" id="borcMiktari" placeholder="borc girebilmek icin dokunun lutfen">
+    
+    <input style="height: 150px; width: 160px;" type="text" id="borcMiktari"  placeholder="islem icin dokun">
 
     
     </div>
@@ -87,17 +88,20 @@
         <button onclick="insertValue(3)">3</button><br>
         <button onclick="insertValue(4)">4</button>
         <button onclick="insertValue(5)">5</button>
-        <button onclick="insertValue(6)">6</button><br>
+        <button onclick="insertValue(6)">6</button>
+        <input type="text" id="keypadBorcMiktari" style="width: auto;" ><br>
         <button onclick="insertValue(7)">7</button>
         <button onclick="insertValue(8)">8</button>
-        <button onclick="insertValue(9)">9</button><br>
+        <button onclick="insertValue(9)">9</button>
+        <button style="background-color: green;" onclick="borcYaz()">borc yaz</button><br>
         <button onclick="insertValue(0)">0</button>
-        <button onclick="clearTextbox()">Clear</button>
+        <button onclick="clearTextbox()">Temizle...</button>
+        <button style="background-color: red;" onclick="borcSil()">borc sil</button>
     </div>
     <p style="font-size: xx-large;" id="toplam"></p>
     <div style="font-size: xx-large;" class="kutu">   
         
-        <ul style="list-style-type:none;" id="borc_defteri" >BORCLAR</ul>
+        <ul style="list-style-type:none;" id="borc_defteri" ></ul>
      
     </div>
 
