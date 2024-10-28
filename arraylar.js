@@ -61,7 +61,7 @@ function borcTopla(){
     toplam = 0;
 }
 
-
+ 
 function borcSil() {
     var borc_miktari = document.getElementById("borcMiktari").value;    
     if (borc_miktari == 0 || borc_miktari==null){
